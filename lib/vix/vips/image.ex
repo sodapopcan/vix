@@ -46,7 +46,7 @@ defmodule Vix.Vips.Image do
       %Vix.Vips.Image{ref: #Reference<0.2448791511.2685009949.153703>}
 
   To slice across multiple dimensions, you can wrap the ranges in a list.
-  The list will be of the form `[with_slice, height_slice, band_slice]`.
+  The list will be of the form `[width_slice, height_slice, band_slice]`.
 
       # Returns an image that slices a 10x10 pixel square
       # from the top left of the image with three bands
@@ -54,7 +54,7 @@ defmodule Vix.Vips.Image do
       %Vix.Vips.Image{ref: #Reference<0.2448791511.2685009949.153738>}
 
   If number of dimensions are less than 3 then remaining dimensions
-  are returned in full
+  are returned in full.
 
       # If `i` size is 100x100 with 3 bands
       #=> i[[0..9, 0..9]] # equivalent to `i[[0..9, 0..9, 0..2]]`
@@ -71,7 +71,7 @@ defmodule Vix.Vips.Image do
       #=> i[[-10..-1, -10..-1]]
       %Vix.Vips.Image{ref: #Reference<0.2448791511.2685009949.153742>}
 
-  Slice can mix integers and ranges
+  Slice can mix integers and ranges.
 
       # Slices the bottom right 10x1 pixels of the image
       # and returns all bands.
